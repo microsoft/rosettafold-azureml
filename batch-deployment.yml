@@ -1,0 +1,17 @@
+$schema: https://azuremlschemas.azureedge.net/latest/batchDeployment.schema.json
+name: rosettafold-deployment
+endpoint_name: rosettafold-endpoint
+model: azureml:placeholdermodel:1
+code_configuration:
+  code:
+    local_path: .
+  scoring_script: score.py
+compute: azureml:gpu-cluster
+environment: azureml:rosettaenv:1
+mini_batch_size: 1
+output_file_name: batchoutput.txt
+retry_settings:
+  max_retries: 3
+  timeout: 4000
+error_threshold: -1 
+logging_level: info
