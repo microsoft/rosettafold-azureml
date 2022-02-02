@@ -1,14 +1,31 @@
-# Project
+# RoseTTAFold with Azure Machine Learning
+## Introduction
+Azure is collaborating with the [Baker Lab](https://www.bakerlab.org/) at the University of Washington to easily run the RoseTTAFold protein folding model using Azure Machine Learning (Azure ML).
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+For more information on RoseTTAFold, visit the project's [GitHub repo](https://github.com/RosettaCommons/RoseTTAFold) and the [project announcement](https://www.bakerlab.org/index.php/2021/07/15/accurate-protein-structure-prediction-accessible/).
 
-As the maintainer of this project, please make a few updates:
+This repo contains three notbooks that will guide you through setting up your Azure ML workspace, submitting jobs for processing, and setting up a batch endpoint for scalable inferencing from the command line interface (CLI) or REST APIs.
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+**Note:** the RoseTTAFold deployments demonstrated here are not designed to run in production environments. They are is strictly for non-production test environments.
+
+## Notebooks
+
+This repo contains the following notebooks:
+- **[1-setup-workspace.ipynb](./1-setup-workspace.ipynb)**
+    - Run one-time setup steps to prepare your Azure ML Workspace with the dependency Datasets and a Compute Cluster.
+- **[2-run-experiment.ipynb](./2-run-experiment.ipynb)**
+    - Run RosettaFold as an Azure ML Experiment. 
+    - Create an input file, submit a Run, check status, and get the results.
+- **[3-batch-endpoint.ipynb](./3-batch-endpoint.ipynb)**
+    - Create a Batch Endpoint that can be called from the Azure CLI or as a REST call. 
+
+## Getting Started
+
+1. Clone this repo:
+`git clone https://github.com/microsoft/rosettafold-azureml.git`
+2. Open the folder in VS Code (installation instructions [here](https://code.visualstudio.com/), if needed):
+`code rosettafold-azureml`
+3. Open each notebook and follow along, starting with [1-setup-workspace.ipynb](./1-setup-workspace.ipynb).
 
 ## Contributing
 
